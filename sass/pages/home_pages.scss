@@ -16,9 +16,29 @@
 .photographer_section article h2 {
     color: $colorSecondary;
     font-size: 36px;
+    line-height: 47px;
+    text-align: center;
 }
 
 .photographer_section article img {
     height: 200px;
     width: 200px;
+}
+
+.photographer_section article h3 {
+    color: $colorPrimary;
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.photographer_section article h4 {
+    color: $colorBlack;
+    font-size: 10px;
+    line-height: 13px;
+}
+
+.photographer_section article h5 {
+    color: $colorGreyMedium;
+    font-size: 9px;
+    line-height: 12px;
 }
