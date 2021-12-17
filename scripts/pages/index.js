@@ -9,7 +9,7 @@ class App {
         const photographers = await this.PhotogaphersApi.getPhotographersData()
         // et bien retourner le tableau photographers seulement une fois
 
-        console.log(photographers)
+        
         const photographersSection = document.querySelector(".photographer_section")
         photographers
             .map(photographer => new dataPhotograher(photographer))

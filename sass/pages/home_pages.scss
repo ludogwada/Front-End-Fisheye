@@ -23,6 +23,9 @@
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .photographer_section article h3 {
@@ -35,6 +38,7 @@
     color: $colorBlack;
     font-size: 10px;
     line-height: 13px;
+    padding: 5px;
 }
 
 .photographer_section article h5 {
