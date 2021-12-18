@@ -1,28 +1,28 @@
-function photographerFactory(data) {
-    const { name, portrait, city, country, tagline, price } = data;
-
-    const picture = `assets/photographers/${portrait}`;
-
-    function getUserCardDOM() {
-        const article = document.createElement( 'a' );
-        article.setAttribute('href', "./photographer.html")
-        article.classList.add('article')
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
-        h2.textContent = name;
-        const h3 = document.createElement( 'h3' );
-        h3.textContent = city + ", " + country;
-        const h4 = document.createElement( 'h4' );
-        h4.textContent = tagline;
-        const h5 = document.createElement( 'h5' );
-        h5.textContent = price + "€/jour";
-        article.appendChild(img);
-        article.appendChild(h2);
-        article.appendChild(h3);
-        article.appendChild(h4);
-        article.appendChild(h5);
-        return (article);
+class PhotographerCard {
+    constructor(photographer) {
+      this._photographer = photographer
     }
-    return {  getUserCardDOM }
-}
+  
+    createPhotographerCard () {
+      const $wrapper = document.createElement('li')
+  
+      const card = `      
+        <article >
+          <a class="article" href="/photographer.html?id=${this._photographer.id}">
+            <div >
+              <img class="article__img" src="${this._photographer.portrait}" alt="${this._photographer.name}" />
+            </div>
+            <h2 class="article__h2">${this._photographer.name}</h2>
+            <ul class="article__info">
+              <li class="article__info__location">${this._photographer.city}, ${this._photographer.country}</li>
+              <li class="article__info__tagline">${this._photographer.tagline}</li>
+              <li class="article__info__price">${this._photographer.price}€/jour</li>
+            </ul>
+          </a>
+        </article>      
+      `
+  
+      $wrapper.innerHTML = card
+      return $wrapper
+    }
+  }

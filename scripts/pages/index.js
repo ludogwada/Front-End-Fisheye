@@ -12,18 +12,16 @@ class App {
         
         const photographersSection = document.querySelector(".photographer_section")
         photographers
-            .map(photographer => new dataPhotograher(photographer))
+            .map(photographer => new dataPhotographer(photographer))
             .forEach((photographer) => {
-                const photographerModel = photographerFactory(photographer);
-                const userCardDOM = photographerModel.getUserCardDOM();
+                const photographerModel = new PhotographerCard(photographer);
+                const userCardDOM = photographerModel.createPhotographerCard();
                 photographersSection.appendChild(userCardDOM);
         });
-    
-
-    
-    }
+     }
 }  
 
 const app = new App()
     app.main()
+    
     

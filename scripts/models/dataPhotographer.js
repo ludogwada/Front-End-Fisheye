@@ -1,39 +1,40 @@
-class dataPhotograher {
-    constructor(photographers) {
-        this._portrait = photographers.portrait
-        this._name = photographers.name 
-        this._id = photographers.id 
-        this._city = photographers.city 
-        this._country = photographers.country 
-        this._tagline = photographers.tagline 
-        this._price = photographers.price 
-    }
+class dataPhotographer {
+     
+  constructor(data) {
+    this._id = data.id
+    this._name = data.name
+    this._city = data.city
+    this._country = data.country
+    this._tagline = data.tagline
+    this._price = data.price
+    this._portrait = data.portrait
+  }
 
-    get portrait() {
-        return this._portrait
-    }
+  get id() {
+    return this._id
+  }
 
-    get name() {
-        return this._name
-    }
+  get name() {
+    return this._name
+  }
 
-    get id() {
-        return this._id
-    }
+  get city() {
+    return this._city
+  }
 
-    get city() {
-        return this._city
-    }
+  get country() {
+    return this._country
+  }
 
-    get country() {
-        return this._country
-    }
+  get tagline() {
+    return this._tagline
+  }
 
-    get tagline() {
-        return this._tagline
-    }
+  get price() {
+    return this._price
+  }
 
-    get price() {
-        return this._price
-    }
+  get portrait() {
+    return '/assets/photographers/' + this._portrait
+  }
 }

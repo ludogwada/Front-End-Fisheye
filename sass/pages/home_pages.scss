@@ -12,38 +12,45 @@
     align-items: center;
     flex-direction: column;
     text-decoration: none;
-}
 
-.article h2 {
-    color: $colorSecondary;
-    font-size: 36px;
-    line-height: 47px;
-    text-align: center;
-}
+    &__img{
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
 
-.article img {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    -o-object-fit: cover;
-       object-fit: cover;
-}
+    &__h2{
+        color: $colorSecondary;
+        font-size: 36px;
+        line-height: 47px;
+        text-align: center;
+    }
 
-.article h3 {
-    color: $colorPrimary;
-    font-size: 13px;
-    line-height: 17px;
-}
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        &__location{
+            color: $colorPrimary;
+            font-size: 13px;
+            line-height: 17px;
+        }
 
-.article h4 {
-    color: $colorBlack;
-    font-size: 10px;
-    line-height: 13px;
-    padding: 5px;
-}
+        &__tagline{
+            color: $colorBlack;
+            font-size: 10px;
+            line-height: 13px;
+            padding: 5px;
+        }
 
-.article h5 {
-    color: $colorGreyMedium;
-    font-size: 9px;
-    line-height: 12px;
+        &__price{
+            color: $colorGreyMedium;
+            font-size: 9px;
+            line-height: 12px;
+        }
+    }
 }
