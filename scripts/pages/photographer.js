@@ -1,18 +1,32 @@
 const id = new URLSearchParams(window.location.search).get("id");
-var photographers = "";
-var thisPhotographer = "";
+this.PhotogaphersApi = new PhotographerApi('/data/photographers.json')
+let photographers = "";
+let thisPhotographer = "";
 
 async function getPhotographer() {
-  photographers = await getData("photographers");
+  photographers =  await this.PhotogaphersApi.getPhotographersData();
+  
   for (let i = 0; i < photographers.length; i++){
     if (photographers[i].id == id) {
-      thisPhotographer = photographers[i];
-      return {photographer : thisPhotographer};
+      thisPhotographer = photographers[i]; 
+      return thisPhotographer;
+     
     }
   }
 }
 
 async function displayHeader(photographer) {
-  const photographerModel = photographerFactory(photographer);
-  photographerModel.getPhotoCardDOM();
+  
+      const photographerModel = photographerFactory(photographer);
+      photographerModel.getPhotoCardDOM();
+      
 }
+
+
+async function init() {
+  const photographer = await getPhotographer();
+  
+  displayHeader(photographer);
+  
+}
+init()
