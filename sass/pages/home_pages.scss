@@ -17,6 +17,7 @@
         height: 200px;
         width: 200px;
         border-radius: 50%;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
         -o-object-fit: cover;
         object-fit: cover;
     }
@@ -28,29 +29,24 @@
         text-align: center;
     }
 
-    &__info{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-        &__location{
-            color: $colorPrimary;
-            font-size: 13px;
-            line-height: 17px;
-        }
-
-        &__tagline{
-            color: $colorBlack;
-            font-size: 10px;
-            line-height: 13px;
-            padding: 5px;
-        }
-
-        &__price{
-            color: $colorGreyMedium;
-            font-size: 9px;
-            line-height: 12px;
-        }
+   
+    &__h3{
+        color: $colorPrimary;
+        font-size: 13px;
+        line-height: 17px;
     }
+
+    &__h4{
+        color: $colorBlack;
+        font-size: 10px;
+        line-height: 13px;
+        padding: 5px;
+    }
+
+    &__h5{
+        color: $colorGreyMedium;
+        font-size: 9px;
+        line-height: 12px;
+    }
+    
 }
