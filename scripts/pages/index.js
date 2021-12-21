@@ -5,7 +5,11 @@ class App {
     }   
 
    async  main() {
+      
         const photographers = await this.PhotogaphersApi.getPhotographersData()
+        
+
+        
         const photographersSection = document.querySelector(".photographer_section")
         photographers
             .map(photographer => new dataPhotographer(photographer))
@@ -19,3 +23,5 @@ class App {
 
 const app = new App()
     app.main()
+    
+    
