@@ -1,26 +1,59 @@
-form {
+#formModal {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 3%;
 }
 
-form label {
+.formLabel {
     color: $colorLabel;
     font-size: 36px;
+    line-height: 46.87px;
 }
 
-form div {
+.formData {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: self-start;
-    margin-bottom: 26px;
+    margin-bottom: 10px;
 }
 
-form input {
-    width: 100%;
-    height: 68px;
-    border: none;
-    border-radius: 5px;
+#message {
+        height: 170px;
+        width: 100%;
+        font-size: 30px;
 }
+
+.text-control {
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 30px;
+    height: 68px;
+  }
+  .formData[data-error]::after {
+    content: attr(data-error);
+    font-size: 20px;
+    color: $colorBlack;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    line-height: 0.3;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  .formData[data-error-visible="true"]::after {
+    opacity: 1;
+  }
+  .formData[data-error-visible="true"] .text-control {
+    border: 2px solid $colorBlack;;
+  }
+  
+  input[data-error]::after {
+      content: attr(data-error);
+      font-size: 0.4em;
+      color: $colorBlack;;
+  }

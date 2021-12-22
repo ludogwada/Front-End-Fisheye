@@ -1,4 +1,6 @@
-class dataPhotographer {
+
+
+ class dataPhotographer {
      
   constructor(data) {
     this._id = data.id
