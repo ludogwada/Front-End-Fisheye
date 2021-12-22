@@ -1,7 +1,7 @@
 const modal = document.getElementById("contact_modal");
-  
+
 function displayModal() {
-	modal.style.display = "block";
+    modal.style.display = "block";
 }
 
 function closeModal() {
@@ -13,4 +13,4 @@ function modalName(data) {
     const { name } = data;
     modalHeader.innerHTML += "<br>" + name;
     return modalHeader;
-  }
+}
