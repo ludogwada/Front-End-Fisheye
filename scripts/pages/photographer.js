@@ -1,5 +1,5 @@
 const id = new URLSearchParams(window.location.search).get("id");
-this.PhotogaphersApi = new PhotographerApi('/data/photographers.json')
+this.PhotogaphersApi = new PhotographerApi()
 let photographers = "";
 let thisPhotographer = "";
 
@@ -10,16 +10,16 @@ async function getPhotographer() {
     if (photographers[i].id == id) {
       thisPhotographer = photographers[i]; 
       return thisPhotographer;
-     
+      
     }
   }
 }
 
 async function displayHeader(photographer) {
   
-      const photographerModel = photographerProfilFactory(photographer);
-      photographerModel.getPhotoCardDOM();
-      
+  const photographerModel = photographerProfilFactory(photographer);
+  photographerModel.getPhotoCardDOM();
+  
 }
 
 

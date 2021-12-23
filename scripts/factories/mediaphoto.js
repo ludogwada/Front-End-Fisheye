@@ -2,7 +2,7 @@ function mediaFactory(data) {
   const { image, video, title, likes,photographerId } = data;
   const picture = `assets/images/${photographerId}/${image}`;
   const mp4 = `assets/images/${photographerId}/${video}`;
-
+  
   
   function getMediaCardDOM() {
     const article = document.createElement("article");
@@ -20,8 +20,6 @@ function mediaFactory(data) {
     likeIcon.classList.add('media-section__article__likeIcon');
     likeIcon.setAttribute("src", "assets/icons/likes.svg");
     likeIcon.setAttribute("alt",likes + " Likes");
-    
-    
     
     if (video !== undefined) {
       vdo.setAttribute("src", mp4);

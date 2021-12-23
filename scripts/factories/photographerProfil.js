@@ -2,7 +2,7 @@ function photographerProfilFactory(data) {
     const { name, portrait, city, country, tagline, price, id } = data;
     
     const picture = `/assets/photographers/${portrait}`
-
+    
     function getPhotoCardDOM() {
         const header = document.querySelector(".photograph-header");
         const img = document.createElement( 'img' );
