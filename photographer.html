@@ -17,10 +17,22 @@
         <div class="photograph-header">
             <button class="contact_button photograph-header__button" onclick="displayModal()">Contactez-moi</button>
         </div>
+        <label class="lablist">Trier par</label>
+          <div id="list1" class="listContainer">
+            <div class="listValue">
+              <span tabindex="0">Popularité</span>
+              <img src="assets/icons/arrow.svg" tabindex="0" onkeypress="toggleListOptions()" class="listIcon" alt="Ouvrir la liste d'option de trie">
+            </div>
+            <div class="listOptions">
+              <div class="listOption" tabindex="0" onclick="selectListOption()">Date</div>
+              <div class="listOption" tabindex="0" onclick="selectListOption()">Titre</div>
+            </div>
+          </div>
+        </select>
+      </label>
         <div class="media-section">
         </div>
         <aside id="contact_modal">
-            
             <div class="modal">
                 <header class="modal__header">
                     <h2 class="modal__header__h2">Contactez-moi</h2>
@@ -54,6 +66,9 @@
     <script src="./scripts/pages/media.js"></script>
     <script src="./scripts/utils/modal.js"></script>
     <script src="./scripts/utils/contactForm.js"></script>
+    <script src="./scripts/utils/list.js"></script>
+    <script src="./scripts/utils/list.js"></script>
+    <script src="./scripts/utils/init.js"></script>
     <script src="/scripts/models/dataPhotographer.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
 </body>

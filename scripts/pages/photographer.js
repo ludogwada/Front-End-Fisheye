@@ -22,11 +22,3 @@ async function displayHeader(photographer) {
   
 }
 
-
-async function init() {
-  const photographer = await getPhotographer();
-  
-  displayHeader(photographer);
-  modalName(photographer);
-}
-init()
