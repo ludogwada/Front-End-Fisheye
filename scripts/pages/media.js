@@ -20,3 +20,10 @@ async function displayData() {
     mediaSection.appendChild(mediaCardDOM);
   });
 }
+async function init() {
+  const photographerMedia = await getMedia();
+  
+  displayData(photographerMedia);
+  
+}
+init()
