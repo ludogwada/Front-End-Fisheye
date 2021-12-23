@@ -1,5 +1,17 @@
 #contact_modal {
-    display: none;
+    position: fixed;
+    top:0;
+    right:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $colorBack;
+    z-index: 2;
+    
+    &__title {
+        font-size: 50px;
+        margin:0;
+    }
+      
 }
 
 .modal {
