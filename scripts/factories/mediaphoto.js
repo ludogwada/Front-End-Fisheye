@@ -15,12 +15,13 @@ function mediaFactory(data) {
     h2.classList.add('media-section__article__h2');
     const h3 = document.createElement( 'h3' );
     h3.classList.add('media-section__article__h3');
-    h3.textContent = likes;
     const likeIcon = document.createElement('img');
+    h3.textContent = likes;
     likeIcon.classList.add('media-section__article__likeIcon');
     likeIcon.setAttribute("src", "assets/icons/likes.svg");
     likeIcon.setAttribute("alt",likes + " Likes");
-    
+    likeIcon.setAttribute("tabindex","0");
+
     if (video !== undefined) {
       vdo.setAttribute("src", mp4);
       article.appendChild(vdo);

@@ -16,7 +16,6 @@ async function getPhotographer() {
 }
 
 async function displayHeader(photographer) {
-  
   const photographerModel = photographerProfilFactory(photographer);
   photographerModel.getPhotoCardDOM();
   
@@ -25,8 +24,20 @@ async function displayHeader(photographer) {
 
 async function init() {
   const photographer = await getPhotographer();
-  
+  await initMedia();
   displayHeader(photographer);
   modalName(photographer);
+}
+
+  async function initMedia() {
+    media = [];
+    // sortBy = list.children[0].children[0].innerText;
+    mediaSection.innerHTML = "";
+    await getMedia();;
+    // sortMedia();
+    calcLike();
+    displayData();
+    likeEL();  
+    
 }
 init()

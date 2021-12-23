@@ -1,0 +1,44 @@
+.like-n-price {
+    height: 90px;
+    width: 375px;
+    border-radius: 5px;
+    background-color: #db8876;
+    position: fixed;
+    right: 36px;
+    bottom: -21px;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .like-n-price .likes {
+    position: relative;
+    font-size: 24px;
+    bottom: 8px;
+    left: 40px;
+    justify-self: left;
+    align-self: center;
+    font-weight: 500;
+    grid-area: 1/2/2/3;
+  }
+  .like-n-price .prices {
+    position: relative;
+    grid-area: 1/1/2/2;
+    font-size: 24px;
+    text-align: left;
+    top: 22px;
+    font-weight: 500;
+    left: 30px;
+  }
+  .like-n-price img {
+    height: 18px;
+    grid-area: 1/2/2/3;
+    width: 18px;
+    -webkit-filter:brightness(0);
+            filter:brightness(0);
+    margin-left: 5px;
+    bottom:8px;
+    right: 34px;
+    border-radius: 0px;
+    position: relative;
+    justify-self: right;
+    align-self: center;
+  }
