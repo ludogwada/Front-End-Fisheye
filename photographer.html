@@ -49,6 +49,17 @@
         <div class="like-n-price">
         </div>
     </main>
+    <div class="lightbox_bg">
+        <div class="lightbox">
+          <img class="lightbox-previous" alt="précédent" tabindex="0" onkeypress="PreviousPic()"  src="assets/icons/arrow.svg">
+          <img class="image-hold">
+          <video class="video-hold" controls  autoplay>
+            </video>
+          <div class="image-name"></div>
+          <img class="lightbox-next" alt="prochain" tabindex="0" onkeypress="NextPic()" src="assets/icons/arrow.svg">
+          <img class="lightbox-close" alt="fermer" tabindex="0" onkeypress="closeLightbox()" src="assets/icons/close.svg">
+        </div>
+      </div>
     <script src="./scripts/factories/mediaphoto.js"></script>
     <script src="/scripts/factories/photographerProfil.js"></script>
     <script src="/scripts/api/PhotographerApi.js"></script>
@@ -56,6 +67,7 @@
     <script src="./scripts/utils/modal.js"></script>
     <script src="./scripts/utils/contactForm.js"></script>
     <script src="./scripts/utils/likes.js"></script>
+    <script src="./scripts/utils/lightbox.js"></script>
     <script src="/scripts/models/dataPhotographer.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
 </body>

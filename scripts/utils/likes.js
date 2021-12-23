@@ -7,7 +7,7 @@ function calcLike() {
   }
 }
 const likeIcons = document.getElementsByClassName("media-section__article__likeIcon");
-console.log(likeIcons)
+
 function likeEL() {
   for (let i = 0; i < likeIcons.length; i++) {
     likeIcons[i].addEventListener("click", addLike);

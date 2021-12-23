@@ -29,7 +29,7 @@ async function init() {
   modalName(photographer);
 }
 
-  async function initMedia() {
+async function initMedia() {
     media = [];
     // sortBy = list.children[0].children[0].innerText;
     mediaSection.innerHTML = "";
@@ -38,6 +38,7 @@ async function init() {
     calcLike();
     displayData();
     likeEL();  
-    
+    articlePicEL();
+  
 }
 init()
