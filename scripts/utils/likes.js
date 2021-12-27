@@ -1,14 +1,14 @@
 let totalLike = "";
 function calcLike() {
-  let tempLike = 0;
+  let tabLike = 0;
   for (i = 0; i < media.length; i++) {
-    tempLike = tempLike + media[i].likes;
-    totalLike = tempLike;
+    tabLike = tabLike + media[i].likes;
+    totalLike = tabLike;
   }
 }
 const likeIcons = document.getElementsByClassName("media-section__article__likeIcon");
 
-function likeEL() {
+function likeFunction() {
   for (let i = 0; i < likeIcons.length; i++) {
     likeIcons[i].addEventListener("click", addLike);
     likeIcons[i].addEventListener("keypress", addLike);
@@ -23,20 +23,20 @@ function removeLike(event) {
 }
 
 function updateLike(element, like) {
-  let likeCounter = element.parentElement.childNodes[2];
-  let tempLike = parseInt(likeCounter.innerText);
-  tempLike = tempLike + like;
-  likeCounter.innerText = tempLike.toString();
-  const rEL = like == 1 ? addLike : removeLike;
-  const aEL = like == 1 ? removeLike : addLike;
+  let likeCounter = element.parentElement.childNodes[2]; 
+  let tabLike = parseInt(likeCounter.innerText);
+  tabLike = tabLike + like;
+  likeCounter.innerText = tabLike.toString();
+  const removeHeart = like == 1 ? addLike : removeLike;
+  const addHeart = like == 1 ? removeLike : addLike;
   element.parentElement.childNodes[3].setAttribute("alt", likeCounter.innerText + " Likes");
-  element.removeEventListener("click", rEL);
-  element.removeEventListener("keypress", rEL);
-  element.addEventListener("click", aEL);
-  element.addEventListener("keypress", aEL);
-  const GLC = document.querySelector(".like-n-price .likes");
-  let tempGLC = parseInt(GLC.innerText);
-  tempGLC = tempGLC + like;
-  GLC.textContent = tempGLC.toString();
+  element.removeEventListener("click", removeHeart);
+  element.removeEventListener("keypress", removeHeart);
+  element.addEventListener("click", addHeart);
+  element.addEventListener("keypress", addHeart);
+  const totalLike = document.querySelector(".like-n-price .likes");
+  let tabtotalLike = parseInt(totalLike.innerText);
+  tabtotalLike = tabtotalLike + like;
+  totalLike.textContent = tabtotalLike.toString();console.log(totalLike)
 }
 
