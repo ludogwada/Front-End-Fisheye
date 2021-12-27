@@ -10,7 +10,7 @@ function photographerFactory(data) {
     const img = document.createElement( 'img' );
     img.classList.add('article__img');
     img.setAttribute("src", picture);
-    img.setAttribute("alt", name);
+    img.setAttribute("alt", name + " portrait");
     const h2 = document.createElement( 'h2' );
     h2.classList.add('article__h2');
     h2.textContent = name;

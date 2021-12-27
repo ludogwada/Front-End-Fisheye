@@ -24,6 +24,7 @@ function mediaFactory(data) {
 
     if (video !== undefined) {
       vdo.setAttribute("src", mp4);
+      vdo.setAttribute("alt", title);
       article.appendChild(vdo);
     }
     else if (image !== undefined) {

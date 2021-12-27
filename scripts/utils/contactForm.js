@@ -3,7 +3,7 @@ const lastName = document.getElementById('last');
 const email = document.getElementById('email');
 const message = document.getElementById('message');
 const regex = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
-const RegExp = '^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$';
+const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const form = document.getElementById('formModal');
 
 
@@ -56,7 +56,7 @@ function checkLast() {
 
 function checkEmail() {
 	//si valeur de email match à la constante RegExp attribue false à "data-error-visible" et retourne vrai
-	if (email.value.trim().match(RegExp)) {
+	if (email.value.trim().match(re)) {
 		email.parentElement.setAttribute('data-error-visible', 'false');
 		return true;
 		//sinon attribue true à "data-error-visible" et retourne faux

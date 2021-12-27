@@ -37,6 +37,6 @@ function updateLike(element, like) {
   const totalLike = document.querySelector(".like-n-price .likes");
   let tabtotalLike = parseInt(totalLike.innerText);
   tabtotalLike = tabtotalLike + like;
-  totalLike.textContent = tabtotalLike.toString();console.log(totalLike)
+  totalLike.textContent = tabtotalLike.toString();
 }
 

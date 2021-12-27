@@ -690,7 +690,7 @@ h1 {
   border-radius: 10px;
 }
 
-.lightbox .image-name {
+.lightbox .lightbox-name {
   grid-area: 2/2/3/3;
   justify-self: flex-start;
   color: #911C1C;
@@ -786,8 +786,9 @@ h1 {
 
 .photographer_section {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 70px;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-around;
+  row-gap: 70px;
   margin-top: 100px;
 }
 

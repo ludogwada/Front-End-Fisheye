@@ -3,7 +3,7 @@ const articlePic = document.getElementsByClassName("media-section")[0];
 let currentTarget = [];
 const previousArrow = document.getElementsByClassName("lightbox-previous")[0];
 const nextArrow = document.getElementsByClassName("lightbox-next")[0];
-const imageName = document.getElementsByClassName("image-name")[0];
+const lightboxName = document.getElementsByClassName("lightbox-name")[0];
 const imageHold = document.getElementsByClassName("image-hold")[0];
 const videoHold = document.getElementsByClassName("video-hold")[0];
 const closeCross = document.getElementsByClassName("lightbox-close")[0];
@@ -14,13 +14,13 @@ function keyListener(event) {
   if (event.code == "ArrowLeft") {
     if (currentTarget.previousSibling !== null) {
       event.preventDefault();
-      PreviousPic();
+      previousPic();
     }
   }
   if (event.code == "ArrowRight") {
     if (currentTarget.nextSibling !== null) {
       event.preventDefault();
-      NextPic();
+      nextPic();
     }
   }
   if (event.code == "Escape") {
@@ -69,13 +69,16 @@ function pic() {
     videoHold.src = currentTarget.children[0].src;
     videoHold.style.display = "block";
     imageHold.style.display = "none";
-    imageName.innerText = "";
+    videoHold.alt = currentTarget.children[1].innerText;
+    lightboxName.innerText = currentTarget.children[1].innerText;
+    console.log(videoHold.alt)
   } else {
     imageHold.style.display = "";
     videoHold.style.display = "none";
     imageHold.src = currentTarget.children[0].src;
     imageHold.alt = currentTarget.children[1].innerText;
-    imageName.innerText = currentTarget.children[1].innerText;
+    lightboxName.innerText = currentTarget.children[1].innerText;
+    console.log(imageHold.alt)
   }
   checkArrow();
 }
