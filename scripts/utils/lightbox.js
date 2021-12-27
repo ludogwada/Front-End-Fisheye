@@ -1,6 +1,6 @@
 const lightboxBg = document.getElementsByClassName("lightbox_bg")[0];
 const articlePic = document.getElementsByClassName("media-section")[0];
-var currentTarget = [];
+let currentTarget = [];
 const previousArrow = document.getElementsByClassName("lightbox-previous")[0];
 const nextArrow = document.getElementsByClassName("lightbox-next")[0];
 const imageName = document.getElementsByClassName("image-name")[0];
@@ -36,7 +36,7 @@ function closeLightbox() {
   lightboxBg.style.display = "none";
 }
 
-function articlePicEL() {
+function articlePicture   () {
   for (let i = 0; i < articlePic.children.length; i++) {
     articlePic.children[i].children[0].addEventListener(
       "keypress",
@@ -50,17 +50,17 @@ closeCross.addEventListener("click", closeLightbox);
 
 function runLightbox(event) {
   currentTarget = event.target.parentElement;
-  console.log(currentTarget);
+ 
   displayLightbox();
   pic();
 }
-previousArrow.addEventListener("click", PreviousPic);
-function PreviousPic() {
+previousArrow.addEventListener("click", previousPic);
+function previousPic() {
   currentTarget = currentTarget.previousSibling;
   pic();
 }
-nextArrow.addEventListener("click", NextPic);
-function NextPic() {
+nextArrow.addEventListener("click", nextPic);
+function nextPic() {
   currentTarget = currentTarget.nextSibling;
   pic();
 }

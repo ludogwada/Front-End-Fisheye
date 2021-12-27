@@ -31,14 +31,14 @@ async function init() {
 
 async function initMedia() {
     media = [];
-    // sortBy = list.children[0].children[0].innerText;
+    sortBy = filter.children[0].children[0].innerText;
     mediaSection.innerHTML = "";
-    await getMedia();;
-    // sortMedia();
+    await getMedia();
+    sortMedia();
     calcLike();
     displayData();
-    likeEL();  
-    articlePicEL();
+    likeFunction();  
+    articlePicture();
   
 }
 init()
