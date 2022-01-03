@@ -6,30 +6,6 @@ const regex = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
 const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const form = document.getElementById('formModal');
 
-
-
-
-//FIRST NAME
-firstName.addEventListener('focusout', function(){
-	checkFirst(this);
-});
-
-//LASTNAME
-lastName.addEventListener('focusout', function(){
-	checkLast(this);
-});
-
-//EMAIL
-email.addEventListener('focusout', function(){
-	checkEmail(this);
-});
-
-//MESSAGE
-message.addEventListener('focusout',function(){
-	checkMessage(this);
-})
-
-
 function checkFirst() {
 	//si valeur de firstName < 2 ou vide ou !du regex attribue true à "data-error-visible" et retourne faux
 	if (firstName.value.trim().length < 2 || firstName.value.trim() === '' || !firstName.value.match(regex)) {
@@ -41,6 +17,10 @@ function checkFirst() {
 		return true;
 	}
 }
+//FIRST NAME
+firstName.addEventListener('focusout', function(){
+	checkFirst(this);
+});
 
 function checkLast() {
 	//si valeur de lastName < 2 ou vide ou !du regex attribue true à "data-error-visible" et retourne faux
@@ -53,6 +33,10 @@ function checkLast() {
 		return true;
 	}
 }
+//LASTNAME
+lastName.addEventListener('focusout', function(){
+	checkLast(this);
+});
 
 function checkEmail() {
 	//si valeur de email match à la constante RegExp attribue false à "data-error-visible" et retourne vrai
@@ -65,6 +49,10 @@ function checkEmail() {
 		return false;
 	}
 }
+//EMAIL
+email.addEventListener('focusout', function(){
+	checkEmail(this);
+});
 
 function checkMessage() {
 	if (message.value.trim().length < 2 || message.value.trim() === '') {
@@ -76,6 +64,10 @@ function checkMessage() {
 		return true;
 	}
 }
+//MESSAGE
+message.addEventListener('focusout',function(){
+	checkMessage(this);
+})
 
 //SUBMIT FORM
 form.addEventListener('submit', function(e) {

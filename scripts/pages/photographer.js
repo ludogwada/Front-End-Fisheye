@@ -10,7 +10,6 @@ async function getPhotographer() {
     if (photographers[i].id == id) {
       thisPhotographer = photographers[i]; 
       return thisPhotographer;
-      
     }
   }
 }
@@ -22,6 +21,19 @@ async function displayHeader(photographer) {
 }
 
 
+async function initMedia() {
+  media = [];
+  sortBy = filter.children[0].children[0].innerText;
+  mediaSection.innerHTML = "";
+  await getMedia();
+  sortMedia();
+  calcLike();
+  displayData();
+  likeFunction();  
+  articlePicture();
+
+}
+
 async function init() {
   const photographer = await getPhotographer();
   await initMedia();
@@ -29,16 +41,5 @@ async function init() {
   modalName(photographer);
 }
 
-async function initMedia() {
-    media = [];
-    sortBy = filter.children[0].children[0].innerText;
-    mediaSection.innerHTML = "";
-    await getMedia();
-    sortMedia();
-    calcLike();
-    displayData();
-    likeFunction();  
-    articlePicture();
-  
-}
+
 init()

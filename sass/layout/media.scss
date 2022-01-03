@@ -13,6 +13,7 @@
             grid-template-rows: repeat(2, auto);
             grid-template-columns: auto 50px;
             align-items: center;
+            cursor: default;
 
             &__img {
                 height: 300px;
@@ -21,6 +22,7 @@
                 -o-object-fit: cover;
                    object-fit: cover;
                 grid-area: 1/1/2/3;
+                cursor: pointer;
             }
 
             &__video {
@@ -30,6 +32,7 @@
                 -o-object-fit: cover;
                    object-fit: cover;
                 grid-area: 1/1/2/3;
+                cursor: pointer;
             }
 
             &__h2 {
@@ -57,6 +60,7 @@
                 bottom: 10px;
                 position: relative;
                 justify-self: right;
+                cursor: pointer;
           }
         }
    

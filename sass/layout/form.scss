@@ -49,7 +49,7 @@
     opacity: 1;
   }
   .formData[data-error-visible="true"] .text-control {
-    border: 2px solid $colorBlack;;
+    border: 8px solid $colorPrimary;;
   }
   
   input[data-error]::after {

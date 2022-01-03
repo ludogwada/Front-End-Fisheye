@@ -1,42 +1,42 @@
-function mediaFactory(data) {
-  const { image, video, title, likes,photographerId } = data;
+function getMediaCardDOM(data) {
+  const { image, video, title, likes, photographerId } = data;
   const picture = `assets/images/${photographerId}/${image}`;
   const mp4 = `assets/images/${photographerId}/${video}`;
-  
-  
-  function getMediaCardDOM() {
-    const article = document.createElement("article");
-    article.classList.add('media-section__article');
-    const img = document.createElement("img");
-    img.classList.add('media-section__article__img');
-    const vdo = document.createElement("video");
-    vdo.classList.add('media-section__article__video');
-    const h2 = document.createElement( 'h2' );
-    h2.classList.add('media-section__article__h2');
-    const h3 = document.createElement( 'h3' );
-    h3.classList.add('media-section__article__h3');
-    const likeIcon = document.createElement('img');
-    h3.textContent = likes;
-    likeIcon.classList.add('media-section__article__likeIcon');
-    likeIcon.setAttribute("src", "assets/icons/likes.svg");
-    likeIcon.setAttribute("alt",likes + " Likes");
-    likeIcon.setAttribute("tabindex","0");
 
-    if (video !== undefined) {
+
+  const article = document.createElement("article");
+  article.classList.add("media-section__article");
+  const img = document.createElement("img");
+  img.classList.add("media-section__article__img");
+  img.setAttribute("role", "button");
+  img.setAttribute("title", title + ", closeupview")
+  const vdo = document.createElement("video");
+  vdo.classList.add("media-section__article__video");
+  const h2 = document.createElement("h2");
+  h2.classList.add("media-section__article__h2");
+  const h3 = document.createElement("h3");
+  h3.classList.add("media-section__article__h3");
+  const likeIcon = document.createElement("img");
+  h3.textContent = likes;
+  likeIcon.classList.add("media-section__article__likeIcon");
+  likeIcon.setAttribute("src", "assets/icons/likes.svg");
+  likeIcon.setAttribute("alt", likes + " Likes");
+  likeIcon.setAttribute("tabindex", "0");
+  likeIcon.setAttribute("role","button");
+
+  if (video !== undefined) {
       vdo.setAttribute("src", mp4);
       vdo.setAttribute("alt", title);
       article.appendChild(vdo);
-    }
-    else if (image !== undefined) {
+  }
+  if (image !== undefined) {
       img.setAttribute("src", picture);
       img.setAttribute("alt", title);
       article.appendChild(img);
-    }
-    h2.textContent = title;
-    article.appendChild(h2);
-    article.appendChild(h3);
-    article.appendChild(likeIcon);
-    return article;
   }
-  return { getMediaCardDOM};        
+  h2.textContent = title;
+  article.appendChild(h2);
+  article.appendChild(h3);
+  article.appendChild(likeIcon);
+  return article;
 }

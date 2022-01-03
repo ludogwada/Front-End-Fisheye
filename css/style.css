@@ -414,6 +414,7 @@ body {
   grid-template-rows: repeat(2, auto);
   grid-template-columns: auto 50px;
   align-items: center;
+  cursor: default;
 }
 .media-section__article__img {
   height: 300px;
@@ -422,6 +423,7 @@ body {
   -o-object-fit: cover;
   object-fit: cover;
   grid-area: 1/1/2/3;
+  cursor: pointer;
 }
 .media-section__article__video {
   height: 300px;
@@ -430,6 +432,7 @@ body {
   -o-object-fit: cover;
   object-fit: cover;
   grid-area: 1/1/2/3;
+  cursor: pointer;
 }
 .media-section__article__h2 {
   font-weight: 400;
@@ -464,6 +467,7 @@ body {
   bottom: 10px;
   position: relative;
   justify-self: right;
+  cursor: pointer;
 }
 
 #formModal {
@@ -520,7 +524,7 @@ body {
 }
 
 .formData[data-error-visible=true] .text-control {
-  border: 2px solid #000000;
+  border: 8px solid #901C1C;
 }
 
 input[data-error]::after {
@@ -647,10 +651,11 @@ h1 {
   height: 100%;
   width: 100%;
   z-index: 1;
-  background-color: white;
+  background-color: #FFFFFF;
 }
 
 .lightbox-previous, .lightbox-next, .lightbox-close {
+  cursor: pointer;
   width: 48px;
   height: 30px;
   -webkit-filter: invert(89%) sepia(73%) saturate(3867%) hue-rotate(350deg) brightness(96%) contrast(90%);
@@ -738,6 +743,7 @@ h1 {
   height: 70px;
   width: 170px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .filterValue span {
@@ -814,21 +820,27 @@ h1 {
   line-height: 47px;
   text-align: center;
 }
-.article__h3 {
+
+.article-h3 {
   color: #901C1C;
   font-size: 13px;
   line-height: 17px;
+  text-align: center;
 }
-.article__h4 {
+
+.article-h4 {
   color: #000000;
   font-size: 10px;
   line-height: 13px;
   padding: 5px;
+  text-align: center;
 }
-.article__h5 {
+
+.article-h5 {
   color: #757575;
   font-size: 9px;
   line-height: 12px;
+  text-align: center;
 }
 
 .photograph-header {

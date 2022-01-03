@@ -8,12 +8,7 @@ function calcLike() {
 }
 const likeIcons = document.getElementsByClassName("media-section__article__likeIcon");
 
-function likeFunction() {
-  for (let i = 0; i < likeIcons.length; i++) {
-    likeIcons[i].addEventListener("click", addLike);
-    likeIcons[i].addEventListener("keypress", addLike);
-  }
-}
+
 function addLike(event) {
   updateLike(event.target, 1);
 }
@@ -40,3 +35,10 @@ function updateLike(element, like) {
   totalLike.textContent = tabtotalLike.toString();
 }
 
+
+function likeFunction() {
+  for (let i = 0; i < likeIcons.length; i++) {
+    likeIcons[i].addEventListener("click", addLike);
+    likeIcons[i].addEventListener("keypress", addLike);
+  }
+}
