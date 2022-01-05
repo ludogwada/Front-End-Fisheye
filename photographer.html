@@ -8,69 +8,69 @@
     <title>Fisheye - photographe </title>
 </head>
 <body>
-    <header role="banner">
+    <header id="header" role="banner" aria-hidden="false">
         <a href="./index.html">
-            <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+            <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/>
         </a>
     </header>
-    <main id="main">
-        <div class="photograph-header" aria-label="photographer information">
-            <button type="button" title="contact me" class="contact_button photograph-header__button" onclick="displayModal()">Contactez-moi</button>
-        </div>
-        <label class="labFilter">Trier par</label>
-        <button id="filter1" class="filterContainer">
-            <div class="filterValue">
-                <span tabindex="0">Popularité</span>
-                <img src="assets/icons/arrow.svg" tabindex="0" onkeypress="toggleListOptions()" class="filterIcon" alt="Ouvrir la liste des filtres">
-            </div>
-            <div class="filterOptions">
-                <div class="filterOption" tabindex="0" onclick="selectFilterOption()">Date</div>
-                <div class="filterOption" tabindex="0" onclick="selectFilterOption()">Titre</div>
-            </div>
-        </button>
-        <div class="media-section">
-        </div>
-        <div role="dialog" id="contact_modal" aria-label="Contact information" aria-hidden="true">
-            <div class="modal">
+    <main id="main" aria-hidden="false">
+        <section class="photograph-header" aria-label="photographer information">
+            <button id="openModal" type="button" aria-label="" class="contact_button photograph-header__button" onclick="displayModal()" aria-haspopup="dialog" aria-controls="contact_modal">Contactez-moi</button>
+        </section>
+        <aside role="dialog" id="contact_modal" aria-label="Contact information" aria-hidden="true" >
+            <div class="modal" >
                 <header class="modal__header">
-                    <h2 class="modal__header__h2">Contactez-moi</h2>
-                    <img class="modal__header__img" src="assets/icons/close.svg" onclick="closeModal()" alt="Cross for close modal" />
+                    <h2 class="modal__header__h2"tabindex="0">Contactez-moi</h2>
+                    <img class="modal__header__img" src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" alt="Cross for close modal" aria-label="Fermer le formulaire de contact" />
                 </header>
                 <form id="formModal" action="photographer.html" method="get">
                     <div class="formData" data-error="Veuillez entrer votre prénom." data-error-visible="false">
-                        <label for="first" class="formLabel">Prénom</label>
+                        <label for="first" class="formLabel" tabindex="0">Prénom</label>
                         <input class="text-control" type="text" id="first" aria-labelledby="first" placeholder="Prénom"/>
                     </div>
                     <div class="formData" data-error="Veuillez entrer votre nom." data-error-visible="false">
-                        <label for="last" class="formLabel">Nom</label>
+                        <label for="last" class="formLabel" tabindex="0">Nom</label>
                         <input class="text-control" type="text" id="last" aria-labelledby="last" placeholder="Nom"/>
                     </div>  
                     <div class="formData" data-error="Veuillez entrer votre adresse email." data-error-visible="false">
-                        <label for="email" class="formLabel">Email</label>
+                        <label for="email" class="formLabel" tabindex="0">Email</label>
                         <input class="text-control" type="email" id="email" aria-labelledby="email" placeholder="exemple@email.com"/>
                     </div>
                     <div class="formData" data-error="Veuillez entrer votre message." data-error-visible="false">
-                        <label for="message" class="formLabel">Votre message</label>
+                        <label for="message" class="formLabel" tabindex="0">Votre message</label>
                         <textarea name="message" class="text-control" id="message" aria-labelledby="message" placeholder="Votre message . . ." cols="20" rows="5"></textarea>
                     </div>
                     <button type="submit" class="contact_button send-button" title="send">Envoyer</button>
                 </form>
             </div>
+        </aside>
+        <aside class="like-n-price" aria-label="photographer likes and price" tabindex="0">
+        </aside>
+        <label class="labFilter" tabindex="0">Trier par</label>
+        <div id="filter1" class="filterContainer" >
+            <button class="filterValue" role="button" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+                <span>Popularité</span>
+                <img src="assets/icons/arrow.svg" role="listbox" onkeypress="toggleListOptions()" class="filterIcon" alt="Ouvrir la liste des filtres">
+            </button>
+            <div class="filterOptions" >
+                <div class="filterOption" aria-activedescendant="filterValue" tabindex="0" onclick="selectFilterOption()">Date</div>
+                <div class="filterOption" aria-activedescendant="filterValue" tabindex="0" onclick="selectFilterOption()">Titre</div>
+            </div>
         </div>
-        <div class="like-n-price" aria-label="photographer likes and price">
-        </div>
+        <section class="media-section">
+        </section>
     </main>
-    <div class="lightbox_bg" aria-hidden="true">
+    <aside class="lightbox_bg" aria-hidden="true">
         <div role="dialog" class="lightbox">
             <img role="button" title="previous image" class="lightbox-previous" alt="précédent" tabindex="0" onkeypress="previousPic()"  src="assets/icons/arrow.svg">
-            <img class="image-hold" alt="" src="#">
-            <video class="video-hold" controls  autoplay >
+            <img class="image-hold" alt="" src="#" >
+            <video class="video-hold" controls  autoplay  >
             </video>
-            <div class="lightbox-name"></div>
+            <div class="lightbox-name" ></div>
             <img role="button" title="next image" class="lightbox-next" alt="prochain" tabindex="0" onkeypress="nextPic()" src="assets/icons/arrow.svg">
             <img role="button" title="close dialog" class="lightbox-close" alt="fermer" tabindex="0" onkeypress="closeLightbox()" src="assets/icons/close.svg">
         </div>
-    </div>
+    </aside>
     <script src="./scripts/factories/mediaphoto.js"></script>
     <script src="/scripts/factories/photographerProfil.js"></script>
     <script src="/scripts/api/PhotographerApi.js"></script>

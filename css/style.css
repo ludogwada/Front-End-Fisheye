@@ -388,7 +388,7 @@ td, th {
   color: #FFFFFF;
   padding: 11px;
   width: 170px;
-  height: 70px;
+  height: 60px;
   border: none;
   background-color: #901C1C;
   border-radius: 5px;
@@ -397,7 +397,7 @@ td, th {
 
 body {
   font-family: "DM Sans", sans-serif;
-  margin: 0;
+  margin: 0 50px;
 }
 
 .media-section {
@@ -405,15 +405,12 @@ body {
   grid-template-columns: repeat(3, auto);
   margin: 105px 0;
   justify-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-content: center;
 }
 .media-section__article {
-  display: grid;
   width: 350px;
-  grid-template-rows: repeat(2, auto);
-  grid-template-columns: auto 50px;
-  align-items: center;
+  align-items: flex-start;
   cursor: default;
 }
 .media-section__article__img {
@@ -422,7 +419,6 @@ body {
   border-radius: 5px;
   -o-object-fit: cover;
   object-fit: cover;
-  grid-area: 1/1/2/3;
   cursor: pointer;
 }
 .media-section__article__video {
@@ -431,41 +427,42 @@ body {
   border-radius: 5px;
   -o-object-fit: cover;
   object-fit: cover;
-  grid-area: 1/1/2/3;
   cursor: pointer;
 }
 .media-section__article__h2 {
   font-weight: 400;
   text-align: left;
-  grid-area: 2/1/3/2;
+  width: 280px;
+  height: 70px;
+  margin-left: 2px;
   color: #901C1C;
   font-size: 24px;
   font-style: normal;
   align-self: center;
-  padding: 10px 3px 30px;
   letter-spacing: 0em;
 }
-.media-section__article__h3 {
+
+.nbLikes {
+  display: inline-flex;
+  float: right;
+  margin-right: 2px;
+  margin-top: -70px;
+}
+.nbLikes__h3 {
   font-weight: 500;
-  position: relative;
-  grid-area: 2/2/3/3;
   justify-self: right;
   align-self: center;
-  right: 20px;
+  margin-right: 5px;
   color: #901C1C;
   font-size: 24px;
   font-style: normal;
   align-self: center;
-  padding: 10px 3px 30px;
   letter-spacing: 0em;
 }
-.media-section__article__likeIcon {
-  grid-area: 2/2/3/3;
+.nbLikes__likeIcon {
   height: 18px;
   width: 18px;
   align-self: center;
-  bottom: 10px;
-  position: relative;
   justify-self: right;
   cursor: pointer;
 }
@@ -580,7 +577,10 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap;
   height: 90px;
+  margin: 0 auto;
+  max-width: 1400px;
 }
 
 h1 {
@@ -592,55 +592,41 @@ h1 {
 
 .logo {
   height: 50px;
-  margin-left: 100px;
 }
 
 .like-n-price {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   height: 90px;
   width: 375px;
   border-radius: 5px;
-  background-color: #db8876;
+  background-color: #DB8876;
   position: fixed;
   right: 36px;
   bottom: -21px;
-  display: grid;
-  grid-template-columns: auto auto;
 }
-
-.like-n-price .likes {
+.like-n-price__counter {
+  display: flex;
+}
+.like-n-price__likes {
   position: relative;
   font-size: 24px;
-  bottom: 8px;
-  left: 40px;
-  justify-self: left;
-  align-self: center;
   font-weight: 500;
-  grid-area: 1/2/2/3;
+  margin-right: 5px;
 }
-
-.like-n-price .prices {
+.like-n-price__prices {
   position: relative;
-  grid-area: 1/1/2/2;
   font-size: 24px;
-  text-align: left;
-  top: 22px;
   font-weight: 500;
-  left: 30px;
 }
-
 .like-n-price img {
   height: 18px;
-  grid-area: 1/2/2/3;
   width: 18px;
   -webkit-filter: brightness(0);
   filter: brightness(0);
-  margin-left: 5px;
-  bottom: 8px;
-  right: 34px;
-  border-radius: 0px;
   position: relative;
-  justify-self: right;
-  align-self: center;
+  margin-top: 4px;
 }
 
 .lightbox_bg {
@@ -721,7 +707,7 @@ h1 {
 .labFilter {
   font-size: 18px;
   font-weight: 700;
-  margin: 10px 0px 0px 100px;
+  margin-top: 10px;
   position: relative;
   top: 20px;
   float: left;
@@ -730,17 +716,18 @@ h1 {
 .filterContainer {
   position: absolute;
   display: inline-block;
-  height: 69px;
+  height: 50px;
   width: 170px;
   cursor: default;
-  margin: 10px 15px 10px;
+  margin: 15px 15px 10px;
 }
 
 .filterValue {
-  display: block;
-  background-color: #911c1c;
-  color: white;
-  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #901C1C;
+  color: #FFFFFF;
+  height: 60px;
   width: 170px;
   border-radius: 5px;
   cursor: pointer;
@@ -751,14 +738,15 @@ h1 {
   font-size: 18px;
   font-weight: bold;
   text-align: left;
-  top: 23px;
+  top: 15px;
   left: 20px;
 }
 
 .filterOptions {
-  position: absolute;
-  background-color: #911c1c;
-  color: white;
+  display: none;
+  z-index: 1;
+  background-color: #901C1C;
+  color: #FFFFFF;
   padding-bottom: 6px;
   border-radius: 5px;
   position: relative;
@@ -767,16 +755,13 @@ h1 {
   line-height: 23px;
   text-align: left;
   width: 170px;
-  border-radius: 5px;
   top: -5px;
-  display: none;
-  z-index: 1;
 }
 
 .filterOption {
-  border-top: white 1px solid;
+  border-top: #FFFFFF 1px solid;
   position: relative;
-  left: 10px;
+  left: 20px;
   width: 130px;
   padding: 14px 10px;
 }
@@ -787,7 +772,7 @@ h1 {
   position: relative;
   right: 18px;
   float: right;
-  top: 28px;
+  top: 20px;
 }
 
 .photographer_section {
@@ -851,9 +836,8 @@ h1 {
   align-content: center;
   justify-content: space-around;
   justify-items: start;
-  background-color: #fafafa;
+  background-color: #FAFAFA;
   padding: 50px 0px;
-  margin: 0 100px;
 }
 .photograph-header__button {
   grid-area: 1/2/4/3;

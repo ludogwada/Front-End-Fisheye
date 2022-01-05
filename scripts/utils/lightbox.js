@@ -7,35 +7,44 @@ const lightboxName = document.getElementsByClassName("lightbox-name")[0];
 const imageHold = document.getElementsByClassName("image-hold")[0];
 const videoHold = document.getElementsByClassName("video-hold")[0];
 const closeCross = document.getElementsByClassName("lightbox-close")[0];
+const headerHidden = document.getElementById("header");
+const mainHidden = document.getElementById("main");
 
 function checkArrow() {
     nextArrow.style.display = currentTarget.nextSibling === null ? "none" : "";
     previousArrow.style.display = currentTarget.previousSibling === null ? "none" : "";
 }
 
-function pic() {
+function pic() {                        
     if (currentTarget.firstChild.tagName == "VIDEO") {
-        videoHold.src = currentTarget.children[0].src;
         videoHold.style.display = "block";
         imageHold.style.display = "none";
+        videoHold.src = currentTarget.children[0].src;
+        videoHold.title = currentTarget.children[1].innerText;
         lightboxName.innerText = currentTarget.children[1].innerText;
-        console.log(videoHold);
     } else {
         imageHold.style.display = "";
         videoHold.style.display = "none";
         imageHold.src = currentTarget.children[0].src;
-        imageHold.alt = currentTarget.children[1].innerText;
-        lightboxName.innerText = currentTarget.children[1].innerText;
-        console.log(imageHold);
+        imageHold.alt = currentTarget.children[0].alt;
+        lightboxName.innerText = currentTarget.children[0].alt;
     }
     checkArrow();
 }
 
 function displayLightbox() {
     lightboxBg.style.display = "block";
+    headerHidden.setAttribute("aria-hidden", "true");
+    mainHidden.setAttribute("aria-hidden", "true");
+    lightboxBg.setAttribute("aria-hidden", "false");
+    
+
 }
 function closeLightbox() {
     lightboxBg.style.display = "none";
+    headerHidden.setAttribute("aria-hidden", "false");
+    mainHidden.setAttribute("aria-hidden", "false");
+    lightboxBg.setAttribute("aria-hidden", "true");
 }
 
 function runLightbox(event) {

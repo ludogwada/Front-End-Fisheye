@@ -3,7 +3,10 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
     height: 90px;
+    margin:0 auto;
+    max-width: 1400px;
 }
 
 h1 {
@@ -15,6 +18,5 @@ h1 {
 
 .logo {
     height: 50px;
-    margin-left: 100px;
 }
 
