@@ -13,11 +13,7 @@
     align-items: center;
     flex-direction: column;
     text-decoration: none;
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 616210c4c6a3267ede3b9024e3e8f75dc65d702c
     &__img{
         height: 200px;
         width: 200px;
@@ -26,18 +22,13 @@
         -o-object-fit: cover;
         object-fit: cover;
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 616210c4c6a3267ede3b9024e3e8f75dc65d702c
     &__h2{
         color: $colorSecondary;
         font-size: 36px;
         line-height: 47px;
         text-align: center;
     }
-<<<<<<< HEAD
 }
 
 .description{
@@ -62,27 +53,3 @@
         text-align: center;
     }
 }
-=======
-
-   
-    &__h3{
-        color: $colorPrimary;
-        font-size: 13px;
-        line-height: 17px;
-    }
-
-    &__h4{
-        color: $colorBlack;
-        font-size: 10px;
-        line-height: 13px;
-        padding: 5px;
-    }
-
-    &__h5{
-        color: $colorGreyMedium;
-        font-size: 9px;
-        line-height: 12px;
-    }
-    
-}
->>>>>>> 616210c4c6a3267ede3b9024e3e8f75dc65d702c
