@@ -10,6 +10,10 @@ async function getPhotographer() {
     if (photographers[i].id == id) {
       thisPhotographer = photographers[i]; 
       return thisPhotographer;
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 616210c4c6a3267ede3b9024e3e8f75dc65d702c
     }
   }
 }
@@ -21,6 +25,7 @@ async function displayHeader(photographer) {
 }
 
 
+<<<<<<< HEAD
 async function initMedia() {
   media = [];
   sortBy = filter.children[0].children[0].innerText;
@@ -34,6 +39,8 @@ async function initMedia() {
 
 }
 
+=======
+>>>>>>> 616210c4c6a3267ede3b9024e3e8f75dc65d702c
 async function init() {
   const photographer = await getPhotographer();
   await initMedia();
@@ -41,5 +48,20 @@ async function init() {
   modalName(photographer);
 }
 
+<<<<<<< HEAD
 
+=======
+async function initMedia() {
+    media = [];
+    sortBy = filter.children[0].children[0].innerText;
+    mediaSection.innerHTML = "";
+    await getMedia();
+    sortMedia();
+    calcLike();
+    displayData();
+    likeFunction();  
+    articlePicture();
+  
+}
+>>>>>>> 616210c4c6a3267ede3b9024e3e8f75dc65d702c
 init()

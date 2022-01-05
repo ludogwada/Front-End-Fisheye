@@ -5,6 +5,7 @@ const message = document.getElementById('message');
 const regex = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
 const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const form = document.getElementById('formModal');
+<<<<<<< HEAD
 
 function checkFirst() {
 	//si valeur de firstName < 2 ou vide ou !du regex attribue true à "data-error-visible" et retourne faux
@@ -37,6 +38,56 @@ function checkLast() {
 lastName.addEventListener('focusout', function(){
 	checkLast(this);
 });
+=======
+
+
+
+
+//FIRST NAME
+firstName.addEventListener('focusout', function(){
+	checkFirst(this);
+});
+
+//LASTNAME
+lastName.addEventListener('focusout', function(){
+	checkLast(this);
+});
+
+//EMAIL
+email.addEventListener('focusout', function(){
+	checkEmail(this);
+});
+
+//MESSAGE
+message.addEventListener('focusout',function(){
+	checkMessage(this);
+})
+
+
+function checkFirst() {
+	//si valeur de firstName < 2 ou vide ou !du regex attribue true à "data-error-visible" et retourne faux
+	if (firstName.value.trim().length < 2 || firstName.value.trim() === '' || !firstName.value.match(regex)) {
+		firstName.parentElement.setAttribute('data-error-visible', 'true');
+		return false;
+		//sinon attribue false à "data-error-visible" et retourne vrai
+	} else {
+		firstName.parentElement.setAttribute('data-error-visible', 'false');
+		return true;
+	}
+}
+
+function checkLast() {
+	//si valeur de lastName < 2 ou vide ou !du regex attribue true à "data-error-visible" et retourne faux
+	if (lastName.value.trim().length < 2 || last.value.trim() === '' || !lastName.value.match(regex)) {
+		lastName.parentElement.setAttribute('data-error-visible', 'true');
+		return false;
+		//sinon attribue false à "data-error-visible" et retourne vrai
+	} else {
+		lastName.parentElement.setAttribute('data-error-visible', 'false');
+		return true;
+	}
+}
+>>>>>>> 616210c4c6a3267ede3b9024e3e8f75dc65d702c
 
 function checkEmail() {
 	//si valeur de email match à la constante RegExp attribue false à "data-error-visible" et retourne vrai
@@ -49,10 +100,13 @@ function checkEmail() {
 		return false;
 	}
 }
+<<<<<<< HEAD
 //EMAIL
 email.addEventListener('focusout', function(){
 	checkEmail(this);
 });
+=======
+>>>>>>> 616210c4c6a3267ede3b9024e3e8f75dc65d702c
 
 function checkMessage() {
 	if (message.value.trim().length < 2 || message.value.trim() === '') {
@@ -64,10 +118,13 @@ function checkMessage() {
 		return true;
 	}
 }
+<<<<<<< HEAD
 //MESSAGE
 message.addEventListener('focusout',function(){
 	checkMessage(this);
 })
+=======
+>>>>>>> 616210c4c6a3267ede3b9024e3e8f75dc65d702c
 
 //SUBMIT FORM
 form.addEventListener('submit', function(e) {
