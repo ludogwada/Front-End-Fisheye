@@ -15,7 +15,7 @@ function closeModal() {
     modal.setAttribute("aria-hidden", "true");
     modal.remove("aria-modal");
     main.setAttribute("aria-hidden", "false");
-    modal.location.reload();
+    location.reload();
 }
 
 function modalName(data) {
@@ -27,18 +27,21 @@ function modalName(data) {
 
 btnOpenModal.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
+        e.preventDefault()
         displayModal(e)
     }
 })
 
 crossClose.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
+        e.preventDefault()
         closeModal(e)
     }
 })
 
 window.addEventListener("keydown", function (e) { 
     if (e.key === "Escape" || e.key === "Esc") {
+        e.preventDefault()
         closeModal(e)
     }
 })
