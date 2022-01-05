@@ -1,0 +1,21 @@
+@import "./utils/variables.scss";
+@import "./utils/mixins.scss";
+
+@import "./base/normalize.scss";
+@import "./base/reset.scss";
+
+@import "./components/button.scss";
+
+@import "./layout/container.scss";
+@import "./layout/media.scss";
+@import "./layout/form.scss";
+@import "./layout/modal.scss";
+@import "./layout/header.scss";
+@import "./layout/like.scss";
+@import "./layout/lightbox.scss";
+@import "./layout/filter.scss";
+
+
+@import "./pages/home_pages.scss";
+@import "./pages/photographer.scss";
+
