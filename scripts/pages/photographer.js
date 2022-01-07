@@ -18,7 +18,7 @@ async function displayHeader(photographer) {
     const photographerModel = photographerProfilFactory(photographer);
     photographerModel.getPhotoCardDOM();
 }
-
+// initialise les médias
 async function initMedia() {
     media = [];
     sortBy = filter.children[0].children[0].innerText;
@@ -30,7 +30,7 @@ async function initMedia() {
     likeFunction();
     articlePicture();
 }
-
+// initialise le photographe
 async function init() {
     const photographer = await getPhotographer();
     await initMedia();

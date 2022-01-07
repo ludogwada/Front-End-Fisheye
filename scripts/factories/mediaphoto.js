@@ -1,3 +1,4 @@
+// construction carte media
 function getMediaCardDOM(data) {
     const { image, video, title, likes, photographerId, alt } = data;
     const picture = `assets/images/${photographerId}/${image}`;

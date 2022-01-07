@@ -1,3 +1,4 @@
+// construction carte photographe
 function photographerFactory(data) {
     const { name, portrait, city, country, tagline, price, id } = data;
     const picture = `${portrait}`;
@@ -34,7 +35,6 @@ function photographerFactory(data) {
         div.appendChild(h3);
         div.appendChild(h4);
         div.appendChild(h5);
-
         article.appendChild(h5);
         return article;
     }

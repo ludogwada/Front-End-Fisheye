@@ -73,27 +73,24 @@ function checkMessage() {
         return true;
     }
 }
-//MESSAGE
+
 message.addEventListener("focusout", function () {
     checkMessage(this);
 });
 
-//SUBMIT FORM
 form.addEventListener("submit", function (e) {
-    //empeche le comportement par defaut et verifie les fonctions
     e.preventDefault();
     checkFirst();
     checkLast();
     checkEmail();
     checkMessage();
-    // si tout les fonctions retourne true, le formulaire disparait, la modal Thanks s'affiche et forumaire reset.
+
     if (
         checkFirst(firstName) &&
         checkLast(lastName) &&
         checkEmail(email) &&
         checkMessage(message)
     ) {
-        //   consoleMessageValid()
         modal.style.display = "none";
         consoleMessageValid(firstName, lastName, email, message);
         form.reset();

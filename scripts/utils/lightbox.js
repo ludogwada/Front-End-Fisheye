@@ -15,6 +15,7 @@ function checkArrow() {
     nextArrow.style.display = currentTarget.nextSibling === null ? "none" : "";
     previousArrow.style.display =
         currentTarget.previousSibling === null ? "none" : "";
+    checkArrow();
 }
 
 function pic() {
@@ -31,7 +32,6 @@ function pic() {
         imageHold.alt = currentTarget.children[0].alt;
         lightboxName.innerText = currentTarget.children[1].innerText;
     }
-    checkArrow();
 }
 
 function displayLightbox() {
@@ -65,19 +65,19 @@ function nextPic() {
 }
 
 function keyListener(e) {
-    if (e.code == "ArrowLeft") {
+    if (e.key == "ArrowLeft") {
         if (currentTarget.previousSibling !== null) {
             e.preventDefault();
             previousPic();
         }
     }
-    if (e.code == "ArrowRight") {
+    if (e.key == "ArrowRight") {
         if (currentTarget.nextSibling !== null) {
             e.preventDefault();
             nextPic();
         }
     }
-    if (e.code == "Escape") {
+    if (e.key == "Escape") {
         e.preventDefault();
         closeLightbox();
     }

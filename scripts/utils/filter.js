@@ -13,16 +13,11 @@ function toggleFilterOptions() {
 }
 
 function selectFilterOption() {
-    // l'option clicked
     const option = event.target;
-    // la valeur de l'option clicked
     const optionValue = option.innerText;
-    // le champ visible qui contient la valeur actuelle
     const filterValue = filter.children[0].children[0];
 
-    // move current filter value to clicked option
     option.innerText = filterValue.innerText;
-    // put old value of clicked option in filter value
     filterValue.innerText = optionValue;
     sortBy = filter.children[0].children[0].innerText;
     toggleFilterOptions();

@@ -1,3 +1,4 @@
+// traitement des données des photographes
 class dataPhotographer {
     constructor(data) {
         this._id = data.id;
