@@ -64,21 +64,21 @@ function nextPic() {
     pic();
 }
 
-function keyListener(event) {
-    if (event.code == "ArrowLeft") {
+function keyListener(e) {
+    if (e.code == "ArrowLeft") {
         if (currentTarget.previousSibling !== null) {
-            event.preventDefault();
+            e.preventDefault();
             previousPic();
         }
     }
-    if (event.code == "ArrowRight") {
+    if (e.code == "ArrowRight") {
         if (currentTarget.nextSibling !== null) {
-            event.preventDefault();
+            e.preventDefault();
             nextPic();
         }
     }
-    if (event.code == "Escape") {
-        event.preventDefault();
+    if (e.code == "Escape") {
+        e.preventDefault();
         closeLightbox();
     }
 }
