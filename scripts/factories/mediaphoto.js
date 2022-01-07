@@ -1,5 +1,5 @@
 function getMediaCardDOM(data) {
-  const { image, video, title, likes, photographerId } = data;
+  const { image, video, title, likes, photographerId,alt } = data;
   const picture = `assets/images/${photographerId}/${image}`;
   const mp4 = `assets/images/${photographerId}/${video}`;
 
@@ -9,10 +9,12 @@ function getMediaCardDOM(data) {
   const img = document.createElement("img");
   img.classList.add("media-section__article__img");
   img.setAttribute("role", "button");
-  img.setAttribute("title", title + ", closeupview")
+  img.setAttribute("title", title)
   img.setAttribute("tabindex", "0");
   const vdo = document.createElement("video");
   vdo.classList.add("media-section__article__video");
+  vdo.setAttribute("role", "button");
+  vdo.setAttribute("title", title)
   vdo.setAttribute("tabindex", "0");
   const h2 = document.createElement("h2");
   h2.classList.add("media-section__article__h2");
@@ -31,12 +33,12 @@ function getMediaCardDOM(data) {
 
   if (video !== undefined) {
       vdo.setAttribute("src", mp4);
-      vdo.setAttribute("alt", title);
+      vdo.setAttribute("alt", alt + ", close-up view");
       article.appendChild(vdo);
   }
   if (image !== undefined) {
       img.setAttribute("src", picture);
-      img.setAttribute("alt", title);
+      img.setAttribute("alt", alt + ", close-up view");
       article.appendChild(img);
   }
   h2.textContent = title;

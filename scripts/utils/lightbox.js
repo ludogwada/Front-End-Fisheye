@@ -9,6 +9,7 @@ const videoHold = document.getElementsByClassName("video-hold")[0];
 const closeCross = document.getElementsByClassName("lightbox-close")[0];
 const headerHidden = document.getElementById("header");
 const mainHidden = document.getElementById("main");
+const lightbox = document.querySelector(".lightbox");
 
 function checkArrow() {
     nextArrow.style.display = currentTarget.nextSibling === null ? "none" : "";
@@ -27,7 +28,7 @@ function pic() {
         videoHold.style.display = "none";
         imageHold.src = currentTarget.children[0].src;
         imageHold.alt = currentTarget.children[0].alt;
-        lightboxName.innerText = currentTarget.children[0].alt;
+        lightboxName.innerText = currentTarget.children[1].innerText;
     }
     checkArrow();
 }
@@ -37,7 +38,8 @@ function displayLightbox() {
     headerHidden.setAttribute("aria-hidden", "true");
     mainHidden.setAttribute("aria-hidden", "true");
     lightboxBg.setAttribute("aria-hidden", "false");
-    
+    lightbox.setAttribute("tabindex", "0");
+    lightbox.focus();
 
 }
 function closeLightbox() {
@@ -45,6 +47,7 @@ function closeLightbox() {
     headerHidden.setAttribute("aria-hidden", "false");
     mainHidden.setAttribute("aria-hidden", "false");
     lightboxBg.setAttribute("aria-hidden", "true");
+    lightbox.removeAttribute("tabindex", "0");
 }
 
 function runLightbox(event) {

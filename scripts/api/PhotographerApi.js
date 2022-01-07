@@ -1,5 +1,5 @@
 class PhotographerApi {
-    _url = "/data/photographers.json";
+    _url = "/data/photographers_new.json";
     
     async getPhotographersData() {
         return fetch(this._url)

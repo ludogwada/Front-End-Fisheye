@@ -2,20 +2,22 @@ const modal = document.getElementById("contact_modal");
 const btnOpenModal = document.getElementById("openModal");
 const main = document.getElementById("main");
 const crossClose = document.querySelector(".modal__header__img");
+const modalBody = document.querySelector(".modal");
 
 function displayModal() {
     modal.style.display = "block";
     modal.setAttribute("aria-hidden", "false");
     modal.setAttribute("aria-modale", "true");
     main.setAttribute("aria-hidden", "true");
+    modalBody.setAttribute("tabindex", "0");
+    modalBody.focus();
 }
 
 function closeModal() {
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", "true");
-    modal.remove("aria-modal");
     main.setAttribute("aria-hidden", "false");
-    location.reload();
+    modalBody.removeAttribute("tabindex", "0");     
 }
 
 function modalName(data) {
@@ -25,21 +27,21 @@ function modalName(data) {
     return modalHeader;
 }
 
-btnOpenModal.addEventListener("keydown", function (e) {
+btnOpenModal.addEventListener("keydown", function(e) {
     if (e.key === "Enter") {
         e.preventDefault()
         displayModal(e)
     }
 })
 
-crossClose.addEventListener("keydown", function (e) {
+crossClose.addEventListener("keydown", function(e) {
     if (e.key === "Enter") {
         e.preventDefault()
         closeModal(e)
     }
 })
 
-window.addEventListener("keydown", function (e) { 
+window.addEventListener("keydown", function(e) {
     if (e.key === "Escape" || e.key === "Esc") {
         e.preventDefault()
         closeModal(e)
