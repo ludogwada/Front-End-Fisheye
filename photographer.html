@@ -8,7 +8,7 @@
     <title>Fisheye - photographe </title>
 </head>
 <body>
-    <header id="header" role="banner" aria-hidden="false">
+    <header id="header" aria-hidden="false">
         <a href="./index.html" tabindex="0">
             <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page"/>
         </a>
@@ -17,10 +17,10 @@
         <section class="photograph-header" aria-label="photographer information">
             <button id="openModal" type="button" aria-label="" class="contact_button photograph-header__button" onclick="displayModal()" aria-haspopup="dialog" aria-controls="contact_modal">Contactez-moi</button>
         </section>
-        <aside role="dialog" id="contact_modal" aria-label="Contact information" aria-hidden="true" >
+        <div role="dialog" id="contact_modal" aria-label="Contact information" aria-hidden="true" >
             <div class="modal" >
                 <header class="modal__header">
-                    <h2 class="modal__header__h2"tabindex="0">Contactez-moi</h2>
+                    <h2 class="modal__header__h2" tabindex="0">Contactez-moi</h2>
                     <img class="modal__header__img" src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" alt="Cross for close modal" aria-label="Fermer le formulaire de contact" />
                 </header>
                 <form id="formModal" action="photographer.html" method="get">
@@ -43,18 +43,18 @@
                     <button type="submit" class="contact_button send-button" title="Envoyez votre message">Envoyer</button>
                 </form>
             </div>
-        </aside>
+        </div>
         <aside class="like-n-price" aria-label="photographer likes and price" tabindex="0">
         </aside>
         <label class="labFilter" tabindex="0">Trier par</label>
         <div id="filter1" class="filterContainer" >
-            <button class="filterValue" role="button" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+            <button class="filterValue" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
                 <span>Popularité</span>
-                <img src="assets/icons/arrow.svg" role="listbox" onkeypress="toggleListOptions()" class="filterIcon" alt="Ouvrir la liste des filtres">
+                <img src="assets/icons/arrow.svg" onkeypress="toggleListOptions()" class="filterIcon" alt="Ouvrir la liste des filtres">
             </button>
             <div class="filterOptions" >
-                <div class="filterOption" aria-activedescendant="filterValue" tabindex="0" onclick="selectFilterOption()">Date</div>
-                <div class="filterOption" aria-activedescendant="filterValue" tabindex="0" onclick="selectFilterOption()">Titre</div>
+                <div class="filterOption" role="listbox" aria-activedescendant="filterValue" tabindex="0" onclick="selectFilterOption()">Date</div>
+                <div class="filterOption" role="listbox" aria-activedescendant="filterValue" tabindex="0" onclick="selectFilterOption()">Titre</div>
             </div>
         </div>
         <section class="media-section">
