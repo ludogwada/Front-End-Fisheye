@@ -13,10 +13,11 @@ const lightbox = document.querySelector(".lightbox");
 
 function checkArrow() {
     nextArrow.style.display = currentTarget.nextSibling === null ? "none" : "";
-    previousArrow.style.display = currentTarget.previousSibling === null ? "none" : "";
+    previousArrow.style.display =
+        currentTarget.previousSibling === null ? "none" : "";
 }
 
-function pic() {                        
+function pic() {
     if (currentTarget.firstChild.tagName == "VIDEO") {
         videoHold.style.display = "block";
         imageHold.style.display = "none";
@@ -40,7 +41,6 @@ function displayLightbox() {
     lightboxBg.setAttribute("aria-hidden", "false");
     lightbox.setAttribute("tabindex", "0");
     lightbox.focus();
-
 }
 function closeLightbox() {
     lightboxBg.style.display = "none";

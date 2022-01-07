@@ -49,7 +49,10 @@ function photographerProfilFactory(data) {
         counter.appendChild(likey);
         counter.appendChild(likeicon);
         likenprice.appendChild(pricey);
-        likenprice.setAttribute("aria-label", `${totalLike} j'aimes, tarifs: ${price}€ par jour`);
+        likenprice.setAttribute(
+            "aria-label",
+            `${totalLike} j'aimes, tarifs: ${price}€ par jour`
+        );
         const pageTitle = document.getElementsByTagName("title")[0];
         pageTitle.textContent = "Fisheye - " + name;
 

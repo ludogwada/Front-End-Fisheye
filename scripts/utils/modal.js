@@ -17,7 +17,7 @@ function closeModal() {
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", "true");
     main.setAttribute("aria-hidden", "false");
-    modalBody.removeAttribute("tabindex", "0");     
+    modalBody.removeAttribute("tabindex", "0");
 }
 
 function modalName(data) {
@@ -27,23 +27,23 @@ function modalName(data) {
     return modalHeader;
 }
 
-btnOpenModal.addEventListener("keydown", function(e) {
+btnOpenModal.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-        e.preventDefault()
-        displayModal(e)
+        e.preventDefault();
+        displayModal(e);
     }
-})
+});
 
-crossClose.addEventListener("keydown", function(e) {
+crossClose.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-        e.preventDefault()
-        closeModal(e)
+        e.preventDefault();
+        closeModal(e);
     }
-})
+});
 
-window.addEventListener("keydown", function(e) {
+window.addEventListener("keydown", function (e) {
     if (e.key === "Escape" || e.key === "Esc") {
-        e.preventDefault()
-        closeModal(e)
+        e.preventDefault();
+        closeModal(e);
     }
-})
+});

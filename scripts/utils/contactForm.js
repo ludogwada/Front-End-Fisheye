@@ -23,7 +23,7 @@ function checkFirst() {
     }
 }
 //FIRST NAME
-firstName.addEventListener("focusout", function() {
+firstName.addEventListener("focusout", function () {
     checkFirst(this);
 });
 
@@ -43,7 +43,7 @@ function checkLast() {
     }
 }
 //LASTNAME
-lastName.addEventListener("focusout", function() {
+lastName.addEventListener("focusout", function () {
     checkLast(this);
 });
 
@@ -59,7 +59,7 @@ function checkEmail() {
     }
 }
 //EMAIL
-email.addEventListener("focusout", function() {
+email.addEventListener("focusout", function () {
     checkEmail(this);
 });
 
@@ -74,12 +74,12 @@ function checkMessage() {
     }
 }
 //MESSAGE
-message.addEventListener("focusout", function() {
+message.addEventListener("focusout", function () {
     checkMessage(this);
 });
 
 //SUBMIT FORM
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", function (e) {
     //empeche le comportement par defaut et verifie les fonctions
     e.preventDefault();
     checkFirst();
