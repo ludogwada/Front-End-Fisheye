@@ -6,8 +6,7 @@ function calcLike() {
         totalLike = tabLike;
     }
 }
-const likeIcons = document.getElementsByClassName("textArt__nbLikes__likeIcon");
-
+const likeIcons = document.getElementsByClassName("nbLikes__likeIcon");
 function addLike(event) {
     updateLike(event.target, 1);
 }
@@ -32,7 +31,6 @@ function updateLike(element, like) {
         likeCounter.innerText + " Likes"
     );
     const totalLike = document.querySelector(".like-n-price__likes");
-    console.log(tabLike);
     let tabtotalLike = parseInt(totalLike.innerText);
     tabtotalLike = tabtotalLike + like;
     totalLike.textContent = tabtotalLike.toString();
