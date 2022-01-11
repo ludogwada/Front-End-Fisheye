@@ -41,5 +41,4 @@ function likeFunction() {
         likeIcons[i].addEventListener("click", addLike);
         likeIcons[i].addEventListener("keypress", addLike);
     }
-    console.log(likeIcons);
 }
