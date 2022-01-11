@@ -48,17 +48,17 @@
         </aside>
         <label class="labFilter" tabindex="0">Trier par</label>
         <div id="filter1" class="filterContainer" >
-            <button class="filterValue" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+            <button class="filterValue" aria-haspopup="listbox" aria-label="popularité" aria-expanded="false"  tabindex="0">
                 <span>Popularité</span>
                 <img src="assets/icons/arrow.svg" onkeypress="toggleListOptions()" class="filterIcon" alt="Ouvrir la liste des filtres">
             </button>
-            <div class="filterOptions" >
-                <div class="filterOption" role="listbox" aria-activedescendant="filterValue" tabindex="0" onclick="selectFilterOption()">Date</div>
-                <div class="filterOption" role="listbox" aria-activedescendant="filterValue" tabindex="0" onclick="selectFilterOption()">Titre</div>
+            <div class="filterOptions">
+                <div class="filterOption" role="listbox" aria-label="date" tabindex="0" onclick="selectFilterOption()">Date</div>
+                <div class="filterOption" role="listbox" aria-label="titre" tabindex="0" onclick="selectFilterOption()">Titre</div>
             </div>
         </div>
-        <section class="media-section">
-        </section>
+        <div class="media-section">
+        </div>
     </main>
     <aside class="lightbox_bg" aria-hidden="true">
         <div role="dialog" class="lightbox">
